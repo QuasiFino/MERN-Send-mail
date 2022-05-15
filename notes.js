@@ -32,3 +32,5 @@
 
 // v.0.0.4
 // https://emailsendy.herokuapp.com/auth/google/callback
+
+// v.0.0.5
