@@ -22,5 +22,10 @@
 // >git push heroku main
 
 // V.0.0.1
+// google auth in index.js
 
+// v.0.0.2
+// creating seperate file for passport and routes
+
+// v.0.0.3
 
