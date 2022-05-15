@@ -34,3 +34,9 @@
 // https://emailsendy.herokuapp.com/auth/google/callback
 
 // v.0.0.5
+// >yarn add mongoose
+// create a database in mongodb website copy URI string and paste in keys.js 
+// >yarn add cookie-session
+
+// creating user model in mongo
+// creating cookie session
