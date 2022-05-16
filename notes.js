@@ -54,4 +54,10 @@
 // >yarn add http-proxy-middleware@2.0.6 - in client
 
 // v.0.0.7
+// setting empty reducer
+// in client
+// >yarn add redux react-redux react-router-dom redux-thunk axios @reduxjs/toolkit
+// >yarn add materialize-css
+
+// v.0.0.8
 
