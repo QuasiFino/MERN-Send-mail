@@ -40,3 +40,8 @@
 
 // creating user model in mongo
 // creating cookie session
+
+// adding mongo prod key and deploying in heroku
+
+// v.0.0.6
+
