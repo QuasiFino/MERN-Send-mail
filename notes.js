@@ -28,4 +28,20 @@
 // creating seperate file for passport and routes
 
 // v.0.0.3
+// adding prod key
+
+// v.0.0.4
+// https://emailsendy.herokuapp.com/auth/google/callback
+
+// v.0.0.5
+// >yarn add mongoose
+// create a database in mongodb website copy URI string and paste in keys.js 
+// >yarn add cookie-session
+
+// creating user model in mongo
+// creating cookie session
+
+// adding mongo prod key and deploying in heroku
+
+// v.0.0.6
 
