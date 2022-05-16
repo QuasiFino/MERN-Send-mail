@@ -21,20 +21,25 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback'
+      callbackURL: '/auth/google/callback',
+      proxy: true //to support https request from heroku
     },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleId: profile.id })
-        .then(existingUser => {
-          if(existingUser) {
-            console.log('existing User');
-            done(null, existingUser);
-          } else {
-            new User({ googleId: profile.id })
-            .save()
-            .then((user => done(null, user)));
-          }
-        });
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ googleId: profile.id })
+      if(existingUser) {
+        console.log("Existing User");
+        return done(null, existingUser);
+      }
+      // create new User instance
+      const user = await new User({ googleId: profile.id }).save()
+      done(null, user);
     }
   )
 );
+
+// Ok for those who may encounter this issue. The fix is actually fairly simple. Mobile browsers dont understand this GoogleStrategy set up below: \
+// You will have to do something like this
+
+//             clientID: keys.googleClientID,
+//             clientSecret: keys.googleClientSecret,
+//             callbackURL: keys.redirectURI + '/auth/google/callback',
