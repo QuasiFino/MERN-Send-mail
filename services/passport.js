@@ -21,7 +21,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback'
+      callbackURL: '/auth/google/callback',
+      proxy: true //to support https request from heroku
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id })
@@ -38,3 +39,10 @@ passport.use(
     }
   )
 );
+
+// Ok for those who may encounter this issue. The fix is actually fairly simple. Mobile browsers dont understand this GoogleStrategy set up below: \
+// You will have to do something like this
+
+//             clientID: keys.googleClientID,
+//             clientSecret: keys.googleClientSecret,
+//             callbackURL: keys.redirectURI + '/auth/google/callback',
