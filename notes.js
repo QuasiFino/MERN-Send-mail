@@ -69,4 +69,8 @@
 
 // v.0.1.0
 // >yarn build - in client
-// deploying in heroku
+// deploying in heroku - not working
+
+// v.0.1.1
+// adding in package.json
+// "heroku-postbuild": "YARN_PRODUCTION=false yarn --cwd client install && yarn --cwd client build"
