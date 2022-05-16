@@ -60,4 +60,7 @@
 // >yarn add materialize-css
 
 // v.0.0.8
+// setting up header
+// nav bar
+// reducer
 
