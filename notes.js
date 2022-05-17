@@ -74,3 +74,17 @@
 // v.0.1.1
 // adding in package.json
 // "heroku-postbuild": "YARN_PRODUCTION=false yarn --cwd client install && yarn --cwd client build"
+// deploying in heroku - working
+
+// v.0.1.2
+// stripe implementation
+// get stripe keys 
+// signin to stripe.com
+// get keys from APIs section
+
+// in client
+// >yarn add @stripe/react-stripe-js @stripe/stripe-js 
+
+// in server
+// >yarn add stripe
+// >yarn add body-parser //for json

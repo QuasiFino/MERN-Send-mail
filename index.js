@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
+const bodyParser = require('body-parser');
 
 const keys = require('./config/keys');
 const passport = require('passport');
@@ -8,6 +9,8 @@ require('./models/User'); //should be above services/passport
 require('./services/passport'); //nothing is exported in that file
 
 const app = express();
+
+app.use(bodyParser.json()); //to receive req obj from client in json format
 
 app.use(
   cookieSession({
@@ -20,6 +23,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
+require('./routes/billingRoutes')(app);
 
 if(process.env.NODE_ENV === 'production') {
   //to get client side routes - Express will serve up production assets
