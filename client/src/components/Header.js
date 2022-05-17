@@ -13,9 +13,15 @@ const Header = ({ auth }) => {
           <li><a href="/auth/google">Sign In With Google</a></li>
         );
       default:
-        return (
-          <li><a href="/api/logout">Logout</a></li>
-        );
+        return [
+          <li key='1' style={{ margin: '0 10px' }}>Credits: {auth.credits}</li>,
+          <li key='2'>
+            <Link to='/payments'>
+              <button className="btn">Get Credits</button>
+            </Link>
+          </li>,
+          <li key='3'><a href="/api/logout">Logout</a></li>
+        ];
     }
   }
 
