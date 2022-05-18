@@ -7,9 +7,8 @@ import Header from './Header';
 import Landing from './Landing';
 import CardPayment from './CardPayment';
 import Success from './Success';
-
-const Dashboard = () => <h2>Dashboard</h2>
-const SurveyNew = () => <h2>Survey New</h2>
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
 
 function App(props) {
 
@@ -23,14 +22,15 @@ function App(props) {
   return (
     <div >
       <Header />
-
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/surveys" element={<Dashboard />} />
-        <Route path="/surveys/new" element={<SurveyNew />} />
-        <Route path='/payments' element={<CardPayment />} />
-        <Route path='/success' element={<Success />} />
-      </Routes>
+      <div className='container'>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/surveys" element={<Dashboard />} />
+          <Route path="/surveys/new" element={<SurveyNew />} />
+          <Route path='/payments' element={<CardPayment />} />
+          <Route path='/success' element={<Success />} />
+        </Routes>
+      </div>
     </div>
   );
 }

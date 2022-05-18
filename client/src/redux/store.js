@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import reduxThunk from 'redux-thunk'
+import reduxThunk from 'redux-thunk';
+import { reducer as reduxForm } from'redux-form';
 
 import authReducer from './reducers/authReducer';
+import surveyReducer from './reducers/surveyReducer';
 
 const store = configureStore({
-  reducer: { auth: authReducer },
+  reducer: { auth: authReducer, surveys: surveyReducer, form: reduxForm },
   middleware: [ reduxThunk ]
 });
 
