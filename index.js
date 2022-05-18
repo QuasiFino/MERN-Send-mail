@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 const passport = require('passport');
 require('./models/User'); //should be above services/passport
+require('./models/Survey');
 require('./services/passport'); //nothing is exported in that file
 
 const app = express();
@@ -24,6 +25,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if(process.env.NODE_ENV === 'production') {
   //to get client side routes - Express will serve up production assets

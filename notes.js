@@ -88,3 +88,36 @@
 // in server
 // >yarn add stripe
 // >yarn add body-parser //for json
+
+// deployed in heroku - success
+
+// v.0.1.3
+// create Survey model
+// >yarn add sendgrid
+// >yarn add @sendgrid/mail
+
+// >yarn add lodash path-parser
+
+// use ngrok
+// ngrok authtoken YOUR_AUTHTOKEN
+// >ngrok config add-authtoken 28dQroCDb8YGxbvDoe1SUpDMNJS_3bMnwuCWN1ZYkqq2V2Mct
+
+// ngrok http 5000
+
+// in sendgrid under settings -> mail setteings -> event webhook
+// in HTTP POST URL
+
+// https://acb5-2409-4072-81e-eb23-2583-4f19-c538-a669.in.ngrok.io/api/surveys/webhooks
+
+// in browser console
+// >const survey = { title: "my test title", subject: "my test subject", recipients: "ajdivya30@gmail.com", body: "heres the test body of the email" };
+// >survey
+// axios.post("/api/surveys", survey);
+
+// server side survey done
+
+// v.0.1.4
+// create survey on client side
+// in client
+// >yarn add redux-form
+
