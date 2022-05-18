@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { fetchUser } from '../redux/actions';
@@ -17,6 +17,7 @@ function App(props) {
 
   useEffect(() => {
     fetchUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -33,7 +34,5 @@ function App(props) {
     </div>
   );
 }
-
-
 
 export default connect(null, { fetchUser })(App);
